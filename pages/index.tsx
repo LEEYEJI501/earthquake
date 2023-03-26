@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 import Card from "@/component/Common/Card";
 import CardTitle from "@/component/Common/Card/CardTitle";
 import CardSubTitle from "@/component/Common/Card/CardSubTitle";
+import Icons from "@/component/Icons";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,6 +20,7 @@ export default function Home() {
         <Card addClass="!w-100px">
           <CardTitle title="test"></CardTitle>
           <CardSubTitle title="sub"></CardSubTitle>
+          <Icons></Icons>
         </Card>
       </LayoutArticle>
       <LayoutFooter>
