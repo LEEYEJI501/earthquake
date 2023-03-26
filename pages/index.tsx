@@ -19,7 +19,6 @@ export default function Home() {
         <Card addClass="!w-100px">
           <CardTitle title="test"></CardTitle>
           <CardSubTitle title="sub"></CardSubTitle>
-          <button>test</button>
         </Card>
       </LayoutArticle>
       <LayoutFooter>

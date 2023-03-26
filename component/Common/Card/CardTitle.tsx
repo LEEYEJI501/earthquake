@@ -1,9 +1,22 @@
-type props = { title: string; addClass?: string };
+import { useState } from "react";
+import { TextColor, TextSize } from "@/types/Common/Text";
+
+type props = {
+  title: string;
+  textSize?: TextSize;
+  textColor?: TextColor;
+  addClass?: string;
+};
 
 export default function CardTitle(props: props) {
+  const textSize = useState(props.textSize ?? TextSize.LG);
+  const textColor = useState(props.textColor ?? TextColor.BLACK);
+
   return (
     <>
-      <div className={`!text-20px font-bold text-left ${props.addClass}`}>
+      <div
+        className={`font-bold text-left break-words ${textColor[0]} ${textSize[0]} ${props.addClass}`}
+      >
         {props.title}
       </div>
     </>
