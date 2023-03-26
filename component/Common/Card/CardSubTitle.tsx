@@ -15,7 +15,7 @@ export default function CardSubTitle(props: props) {
   return (
     <>
       <div
-        className={`text-left break-words ${textColor[0]} ${textSize[0]} ${props.addClass}`}
+        className={`text-left break-words border-bottom-1px border-gray-400 ${textColor[0]} ${textSize[0]} ${props.addClass}`}
       >
         {props.title}
       </div>
