@@ -6,8 +6,13 @@ import Card from "@/component/Common/Card";
 import CardTitle from "@/component/Common/Card/CardTitle";
 import CardSubTitle from "@/component/Common/Card/CardSubTitle";
 import Icons from "@/component/Icons";
+// awesome icon
+import { icon, findIconDefinition } from '@fortawesome/fontawesome-svg-core'
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
 const inter = Inter({ subsets: ["latin"] });
+const iconName = 'fa-heart';
+const iconDefinition = findIconDefinition({ iconName: iconName });
 
 export default function Home() {
   return (
@@ -20,7 +25,7 @@ export default function Home() {
         <Card addClass="!w-100px">
           <CardTitle title="test"></CardTitle>
           <CardSubTitle title="sub"></CardSubTitle>
-          <Icons></Icons>
+          <Icons iconName={iconDefinition}></Icons>
         </Card>
       </LayoutArticle>
       <LayoutFooter>
