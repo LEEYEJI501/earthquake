@@ -12,7 +12,7 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
 const inter = Inter({ subsets: ["latin"] });
 const iconName = 'fa-heart';
-const iconDefinition = findIconDefinition({ iconName: iconName });
+const iconDefinition =  icon(faHeart);
 
 export default function Home() {
   return (
