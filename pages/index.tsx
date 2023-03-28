@@ -5,8 +5,8 @@ import { Inter } from "next/font/google";
 import Card from "@/component/Common/Card";
 import CardTitle from "@/component/Common/Card/CardTitle";
 import CardSubTitle from "@/component/Common/Card/CardSubTitle";
-import Icons from "@/component/Icons";
-import ImageComp from "@/component/Image";
+import Icon from "@/component/Icon";
+import Image from "@/component/Image";
 // awesome icon
 import { icon } from "@fortawesome/fontawesome-svg-core";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
@@ -25,9 +25,9 @@ export default function Home() {
         <Card addClass="!w-100px">
           <CardTitle title="test"></CardTitle>
           <CardSubTitle title="sub"></CardSubTitle>
-          <Icons iconName={iconDefinition}></Icons>
+          <Icon iconName={iconDefinition}></Icon>
         </Card>
-        <ImageComp 
+        <Image
           src={"/assets/images/cutePuppy.jpg"} alt={"potato"} fallbackSrc={""} 
           width={200}
           height={100}
