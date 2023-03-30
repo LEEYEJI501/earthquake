@@ -10,7 +10,7 @@ type props = {
 
 export default function CardTitle(props: props) {
   const textSize = useState(props.textSize ?? TextSize.LG);
-  const textColor = useState(props.textColor ?? TextColor.BLACK);
+  const textColor = useState(props.textColor ?? TextColor.WHITE);
 
   return (
     <>

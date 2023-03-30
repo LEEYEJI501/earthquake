@@ -20,7 +20,7 @@ export default function Home() {
         <Card addClass="!w-100px">
           <CardTitle title="test"></CardTitle>
           <CardSubTitle title="sub"></CardSubTitle>
-          <Icons></Icons>
+          <Icons iconName="faCoffee" />
         </Card>
       </LayoutArticle>
       <LayoutFooter>
