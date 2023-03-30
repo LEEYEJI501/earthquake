@@ -1,12 +1,20 @@
-/** @type {import('next').NextConfig} */
 const WindiCSSWebpackPlugin = require("windicss-webpack-plugin");
 
-const nextConfig = {
-  reactStrictMode: true,
-  webpack(config) {
-    config.plugins.push(new WindiCSSWebpackPlugin());
-    return config;
-  },
-};
+module.exports = async (phase, { defaultConfig }) => {
+  const config = require('dotenv').config('.env')
 
-module.exports = nextConfig;
+  const parsed = config.parsed
+
+  const nextConfig = {
+    reactStrictMode: true,
+    webpack(config) {
+      config.plugins.push(new WindiCSSWebpackPlugin());
+      return config;
+    },
+    env: {
+      appConfig: parsed,
+      customKey: 'my-value',
+    }
+  }
+  return nextConfig
+}

@@ -10,9 +10,12 @@ import Image from "@/component/Image";
 // awesome icon
 import { icon } from "@fortawesome/fontawesome-svg-core";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
+// google map
+import GoogleMap from "@/component/Map";
 
 const inter = Inter({ subsets: ["latin"] });
 const iconDefinition =  icon(faHeart);
+const apikey = process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY;
 
 export default function Home() {
   return (
@@ -32,6 +35,8 @@ export default function Home() {
           width={200}
           height={100}
         />
+        <GoogleMap></GoogleMap>
+        <div>{apikey}</div>
       </LayoutArticle>
       <LayoutFooter>
         <div>test</div>
