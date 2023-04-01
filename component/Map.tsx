@@ -1,19 +1,24 @@
 import React from 'react'
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 
-const containerStyle = {
-  width: '400px',
-  height: '400px'
-};
+type props = {
+  lat: number,
+  lng: number,
+}
 
-const center = {
-  lat: -3.745,
-  lng: -38.523
-};
 
-const apiKey = process.env.appConfig?.NEXT_PUBLIC_GOOGLE_MAP_API_KEY 
+const apiKey = process.env.appConfig?.NEXT_PUBLIC_GOOGLE_MAP_API_KEY;
 
-export default function MyComponent() {
+export default function GoogleMapAPI(props: props) {
+  const center = {
+    lat: props.lat,
+    lng: props.lng
+  };
+
+  const containerStyle = {
+    width: '400px',
+    height: '400px'
+  };
 
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
