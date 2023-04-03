@@ -10,15 +10,7 @@ type props = {
 const apiKey = process.env.appConfig?.NEXT_PUBLIC_GOOGLE_MAP_API_KEY;
 
 export default function GoogleMapAPI(props: props) {
-  const center = {
-    lat: props.lat,
-    lng: props.lng
-  };
-
-  const containerStyle = {
-    width: '400px',
-    height: '400px'
-  };
+  const { lat, lng } = props
 
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
@@ -28,7 +20,10 @@ export default function GoogleMapAPI(props: props) {
   const [map, setMap] = React.useState(null);
 
   const onLoad = React.useCallback(function callback(map: any) {
-    const bounds = new window.google.maps.LatLngBounds(center);
+    const bounds = new window.google.maps.LatLngBounds({
+      lat,
+      lng
+    });
     map.fitBounds(bounds);
     setMap(map)
   }, [])
@@ -39,8 +34,8 @@ export default function GoogleMapAPI(props: props) {
 
   return isLoaded ? (
       <GoogleMap
-        mapContainerStyle={containerStyle}
-        center={center}
+        mapContainerStyle={{ width: '100%', height: '100%' }}
+        center={{ lat, lng }}
         zoom={10}
         onLoad={onLoad}
         onUnmount={onUnmount}
