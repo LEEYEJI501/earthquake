@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Image from "next/image";
-import styles from "@/styles/Image.module.css";
 
 type props = {
     src: string;
@@ -17,7 +16,7 @@ export default function Img(props: props) {
     return (
         <>
             <Image
-                className={styles.image}
+                className={`max-w-full h-auto overflow-hidden`}
                 src={src} alt={props.alt}
                 onError={onError}
                 width={props.width}
