@@ -9,4 +9,5 @@ export enum TextColor {
   GRAY = "text-gray-600",
   WHITE = "text-white",
   BLACK = "text-black",
+  YELLOW = "text-yellow-500",
 }
