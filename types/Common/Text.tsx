@@ -6,6 +6,7 @@ export enum TextSize {
 }
 
 export enum TextColor {
+  DEFAULT_GRAY = "text-gray",
   GRAY = "text-gray-600",
   WHITE = "text-white",
   BLACK = "text-black",

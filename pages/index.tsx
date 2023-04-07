@@ -1,23 +1,19 @@
 import LayoutHeader from "@/component/Common/Layout/LayoutHeader";
 import LayoutFooter from "@/component/Common/Layout/LayoutFooter";
 import LayoutArticle from "@/component/Common/Layout/LayoutArticle";
-import { Inter } from "next/font/google";
 import Card from "@/component/Common/Card";
 import CardTitle from "@/component/Common/Card/CardTitle";
 import CardSubTitle from "@/component/Common/Card/CardSubTitle";
-import Icon from "@/component/Icon";
-import Image from "@/component/Image";
-// awesome icon
-import { icon } from "@fortawesome/fontawesome-svg-core";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import Icon from "@/component/Common/Icon";
+import Image from "@/component/Common/Image";
+import AppBar from "@/component/Common/Navgation/AppBar";
+import { MarginPosition } from "@/types/Common/Position";
 // google map
-import GoogleMap from "@/component/Map";
-
-const inter = Inter({ subsets: ["latin"] });
-const iconDefinition =  icon(faHeart);
-const apikey = process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY;
+import GoogleMap from "@/component/Common/Map";
+import useGeoLocation from "@/component/Geocode";
 
 export default function Home() {
+  const location = useGeoLocation();
   return (
     <>
       <LayoutHeader
@@ -25,19 +21,28 @@ export default function Home() {
         right={<div>test</div>}
       ></LayoutHeader>
       <LayoutArticle>
-        <Card addClass="!w-100px">
+        <Card addClass="w-100px">
           <CardTitle title="test"></CardTitle>
           <CardSubTitle title="sub"></CardSubTitle>
-          <Icon iconName={iconDefinition}></Icon>
         </Card>
         <Image
-          src={"/assets/images/cutePuppy.jpg"} alt={"potato"} fallbackSrc={""} 
+          src={"/assets/images/cutePuppy.jpg"}
+          alt={"potato"}
+          fallbackSrc={""}
           width={200}
           height={100}
         />
-        <GoogleMap></GoogleMap>
-        <div>{apikey}</div>
+        <GoogleMap
+          lat={-3.745}
+          lng={-38.523}
+          width={500}
+          height={500}
+        ></GoogleMap>
+        <AppBar title="test" marginPosition={MarginPosition.LEFT}></AppBar>
       </LayoutArticle>
+      <div>
+        {location.loaded ? JSON.stringify(location) : "Location data nono"}
+      </div>
       <LayoutFooter>
         <div>test</div>
       </LayoutFooter>

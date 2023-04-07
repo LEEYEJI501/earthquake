@@ -10,4 +10,5 @@ export interface IAppBarItem {
   type: AppBarItemType;
   iconName?: TiconName;
   clickEvent?: Function;
+  addClass?: string;
 }
