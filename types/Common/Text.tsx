@@ -12,3 +12,9 @@ export enum TextColor {
   BLACK = "text-black",
   YELLOW = "text-yellow-500",
 }
+
+export enum InputType {
+  TEXT = "text",
+  PASSWORD = "password",
+  NUMBER = "number",
+}

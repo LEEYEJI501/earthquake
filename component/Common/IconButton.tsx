@@ -2,7 +2,6 @@ import { useState } from "react";
 import Icon from "./Icon";
 import { TextColor, TextSize } from "@/types/Common/Text";
 import { TiconName } from "@/types/Common/Icon";
-import { BackgroundColor } from "@/types/Common/Background";
 import { Cursor } from "@/types/Common/Cursor";
 
 type props = {
