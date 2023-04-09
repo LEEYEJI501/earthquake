@@ -14,13 +14,14 @@ type props = {
   outlined?: boolean;
   min?: number;
   max?: number;
+  block?: boolean;
 };
 
 export default function Input(props: props) {
   const [rounded] = useState(props.rounded ?? BorderRadius.DEFALUT);
   const [label] = useState(props.label ?? "");
   const [type] = useState(props.type ?? InputType.TEXT);
-
+  const [block] = useState(props.block ?? false);
   const [outlined] = useState(props.outlined ?? false);
   const [min] = useState(props.min ?? 0);
   const [max] = useState(props.max ?? 20);
@@ -52,7 +53,9 @@ export default function Input(props: props) {
 
   return (
     <div
-      className={`flex border-1 border-gray-500 shadow-md shadow-gray-600 ${rounded} ${
+      className={`flex ${
+        block ? "w-full" : "w-auto"
+      } border-1 border-gray-500 shadow-md shadow-gray-600 ${rounded} ${
         outlined ? OutLine.DEFAULT : OutLine.SOLO
       }`}
     >
@@ -61,7 +64,7 @@ export default function Input(props: props) {
         {props.prependIcon && <Icon iconName={props.prependIcon} />}
       </label>
       <input
-        className={`w-full`}
+        className={`${block ? "w-full" : "w-auto"}`}
         type={type}
         minLength={min}
         maxLength={max}
