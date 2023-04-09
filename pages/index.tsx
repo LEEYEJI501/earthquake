@@ -4,7 +4,7 @@ import LayoutArticle from "@/component/Common/Layout/LayoutArticle";
 import Card from "@/component/Common/Card";
 import CardTitle from "@/component/Common/Card/CardTitle";
 import CardSubTitle from "@/component/Common/Card/CardSubTitle";
-import Icon from "@/component/Common/Icon";
+import Button from "@/component/Common/Button";
 import Image from "@/component/Common/Image";
 import AppBar from "@/component/Common/Navgation/AppBar";
 import { MarginPosition } from "@/types/Common/Position";
@@ -39,10 +39,11 @@ export default function Home() {
           height={500}
         ></GoogleMap>
         <AppBar title="test" marginPosition={MarginPosition.LEFT}></AppBar>
+        <Button buttonType="button" buttonTitle="뀨?"></Button>
       </LayoutArticle>
-      <div>
+      {/* <div>
         {location.loaded ? JSON.stringify(location) : "Location data nono"}
-      </div>
+      </div> */}
       <LayoutFooter>
         <div>test</div>
       </LayoutFooter>
