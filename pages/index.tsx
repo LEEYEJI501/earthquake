@@ -11,7 +11,8 @@ import { MarginPosition } from "@/types/Common/Position";
 // google map
 import GoogleMap from "@/component/Common/Map";
 import useGeoLocation from "@/component/Geocode";
-
+import Input from "@/component/Common/Input";
+import { InputType } from "@/types/Common/Text";
 export default function Home() {
   const location = useGeoLocation();
   return (
@@ -49,6 +50,9 @@ export default function Home() {
       {/* <div>
         {location.loaded ? JSON.stringify(location) : "Location data nono"}
       </div> */}
+
+      <Input type={InputType.TEXT} outlined></Input>
+      {/* <LayoutFooter>
       {/* <LayoutFooter>
         <div>test</div>
       </LayoutFooter> */}
