@@ -39,14 +39,19 @@ export default function Home() {
           height={500}
         ></GoogleMap>
         <AppBar title="test" marginPosition={MarginPosition.LEFT}></AppBar>
-        <Button buttonType="button" buttonTitle="뀨?"></Button>
+        <Button
+          buttonType="button"
+          buttonTitle="뀨?"
+          buttonSize="md"
+          variant="text"
+        ></Button>
       </LayoutArticle>
       {/* <div>
         {location.loaded ? JSON.stringify(location) : "Location data nono"}
       </div> */}
-      <LayoutFooter>
+      {/* <LayoutFooter>
         <div>test</div>
-      </LayoutFooter>
+      </LayoutFooter> */}
     </>
   );
 }
