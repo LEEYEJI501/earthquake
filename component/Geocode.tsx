@@ -40,7 +40,7 @@ export default function useGeoLocation() {
     }
     navigator.geolocation.getCurrentPosition(onSuccess, onError);
   }, []);
-  console.log(location);
+  //console.log(location);
 
   return location;
 }

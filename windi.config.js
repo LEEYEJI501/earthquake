@@ -11,6 +11,12 @@ export default defineConfig({
         gray: {
           default: "#c6c6c5",
         },
+        white: {
+          default: "#FFFFFF",
+        },
+      },
+      fontFamily: {
+        Bold: ["Pretendard-SemiBold", "system-ui"],
       },
     },
   },
