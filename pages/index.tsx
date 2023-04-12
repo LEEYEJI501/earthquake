@@ -13,6 +13,7 @@ import GoogleMap from "@/component/Common/Map";
 import useGeoLocation from "@/component/Geocode";
 import Input from "@/component/Common/Input";
 import { InputType } from "@/types/Common/Text";
+import Bottom from "@/component/Common/Navgation/Bottom";
 export default function Home() {
   const location = useGeoLocation();
   return (
@@ -46,6 +47,7 @@ export default function Home() {
           buttonSize="md"
           variant="text"
         ></Button>
+        <Bottom title="끄아앙"></Bottom>
       </LayoutArticle>
       {/* <div>
         {location.loaded ? JSON.stringify(location) : "Location data nono"}

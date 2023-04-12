@@ -7,13 +7,12 @@ import { MarginPosition } from "@/types/Common/Position";
 type props = {
   title: string;
   marginPosition?: MarginPosition;
-  titleColor?: string;
   textSize?: TextSize;
   textColor?: TextColor;
 };
 
 export default function AppBar(props: props) {
-  const { title, titleColor, textColor, textSize } = props;
+  const { title, textColor, textSize } = props;
 
   const [marginPosition] = useState(
     props.marginPosition ?? MarginPosition.LEFT
@@ -65,7 +64,6 @@ export default function AppBar(props: props) {
 
   return (
     <>
-      <div>{props.title}</div>
       <div className={`flex p-10px border-1px border-gray-400`}>
         <div className={`${marginPosition} flex items-center`}>
           {rendering()}

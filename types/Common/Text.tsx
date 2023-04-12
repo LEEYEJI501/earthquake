@@ -1,4 +1,5 @@
 export enum TextSize {
+  XS = "text-xs",
   SM = "text-sm",
   BASE = "text-base",
   LG = "text-lg",
@@ -11,6 +12,12 @@ export enum TextColor {
   WHITE = "text-white",
   BLACK = "text-black",
   YELLOW = "text-yellow-500",
+}
+
+export enum TextWeight {
+  THIN = "font-thin",
+  NORMAL = "font-normal",
+  SEMIBOLD = "font-semibold",
 }
 
 export enum InputType {
