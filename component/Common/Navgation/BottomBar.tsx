@@ -2,7 +2,7 @@ import { useState } from "react";
 import IconButton from "../IconButton";
 import { OutLine } from "@/types/Common/Border";
 import { IconSize } from "@/types/Common/Icon";
-import { BottomItemType, IBottomItem } from "@/types/Bottom";
+import { BottomItemType, IBottomItem } from "@/types/BottomBar";
 import { TextColor, TextSize, TextWeight } from "@/types/Common/Text";
 import { MarginPosition } from "@/types/Common/Position";
 
@@ -16,7 +16,7 @@ type props = {
   marginPosition?: MarginPosition;
 };
 
-export default function Bottom(props: props) {
+export default function BottomBar(props: props) {
   const [border] = useState(props.border ?? OutLine.DEFAULT);
   const [textColor] = useState(props.textColor ?? TextColor.WHITE);
   const [textSize] = useState(props.textSize ?? TextSize.XS);
@@ -37,6 +37,14 @@ export default function Bottom(props: props) {
     },
     {
       type: BottomItemType.Text,
+      addClass: "",
+    },
+    {
+      type: BottomItemType.IconButton,
+      clickEvent: () => {
+        console.log("bottom button");
+      },
+      iconName: "faCat",
       addClass: "",
     },
   ];
@@ -67,14 +75,10 @@ export default function Bottom(props: props) {
         );
       }
     }
-    return bottomList;
+    return (
+      <div className={`flex items-center justify-center`}>{bottomList}</div>
+    );
   };
 
-  return (
-    <div className={`flex ${border}`}>
-      <div className={`flex-col items-center justify-center`}>
-        {rendering()}
-      </div>
-    </div>
-  );
+  return <div className={`${border}`}>{rendering()}</div>;
 }
