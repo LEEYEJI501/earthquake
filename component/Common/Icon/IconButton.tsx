@@ -18,20 +18,21 @@ export default function IconButton(props: props) {
   //const [buttonType] = useState(props.buttonType ?? "button");
   const { onClickHandle } = props;
   const [title] = useState(props.title);
-  const [titleSize] = useState(props.titleSize ?? TextSize.BASE);
+  const [titleSize] = useState(props.titleSize ?? TextSize.SM);
   const [disabled] = useState(props.disabled ?? false);
-  const [iconSize] = useState(props.iconSize ?? IconSize.LG);
+  const [iconSize] = useState(props.iconSize ?? IconSize.XL);
 
   return (
     <button
       //type={`${buttonType}`}
-      className={`flex ${disabled ? `${Cursor.DEFAULT}` : ""}`}
+      className={`flex-col ${disabled ? `${Cursor.DEFAULT}` : ""}`}
       onClick={() => onClickHandle()}
       disabled={disabled}
     >
       <Icon
         iconName={props.iconName}
         color={disabled ? TextColor.GRAY : undefined}
+        size={iconSize}
       />
       {title && <span className={`${titleSize}`}>{title}</span>}
     </button>

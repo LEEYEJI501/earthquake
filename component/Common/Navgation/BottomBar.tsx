@@ -1,5 +1,5 @@
 import { useState } from "react";
-import IconButton from "../IconButton";
+import IconButton from "../Icon/IconButton";
 import { OutLine } from "@/types/Common/Border";
 import { IconSize } from "@/types/Common/Icon";
 import { BottomItemType, IBottomItem } from "@/types/BottomBar";
@@ -12,7 +12,7 @@ type props = {
   textColor?: TextColor;
   textSize?: TextSize;
   textWeight?: TextWeight;
-  title: string;
+  title?: string;
   marginPosition?: MarginPosition;
 };
 
@@ -33,10 +33,7 @@ export default function BottomBar(props: props) {
         console.log("bottom button");
       },
       iconName: "faDog",
-      addClass: "",
-    },
-    {
-      type: BottomItemType.Text,
+      title: props.title,
       addClass: "",
     },
     {
@@ -62,6 +59,7 @@ export default function BottomBar(props: props) {
                   item.clickEvent();
                 }
               }}
+              title={title}
             />
           </div>
         );

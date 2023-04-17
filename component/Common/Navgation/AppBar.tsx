@@ -1,7 +1,7 @@
 import { TextSize, TextColor } from "@/types/Common/Text";
 import { IAppBarItem, AppBarItemType } from "@/types/AppBar";
 import { useState } from "react";
-import IconButton from "../IconButton";
+import IconButton from "../Icon/IconButton";
 import { MarginPosition } from "@/types/Common/Position";
 
 type props = {

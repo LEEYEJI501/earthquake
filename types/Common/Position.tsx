@@ -3,3 +3,10 @@ export enum MarginPosition {
   RIGHT = "ml-auto",
   CENTER = "mx-auto",
 }
+
+export enum TooltipPosition {
+  LEFT,
+  RIGHT,
+  BOTTOM,
+  TOP,
+}
