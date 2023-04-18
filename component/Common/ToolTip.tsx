@@ -21,9 +21,9 @@ export default function ToolTip(props: props) {
       case TooltipPosition.TOP:
         return "transform -translate-x-2/4 left-2/4 bottom-30px";
       case TooltipPosition.RIGHT:
-        return "";
+        return "transform translate-x-15 left-2/4 -translate-y-2/4 top-2/4";
       case TooltipPosition.LEFT:
-        return "transform -translate-x-full left-2/4 -translate-y-2/4 top-2/4";
+        return "transform -translate-x-90 left-2/4 -translate-y-2/4 top-2/4";
       case TooltipPosition.BOTTOM:
         return "transform -translate-x-2/4 left-2/4 top-full";
     }

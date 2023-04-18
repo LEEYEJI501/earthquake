@@ -7,13 +7,15 @@ import CardSubTitle from "@/component/Common/Card/CardSubTitle";
 import Button from "@/component/Common/Button";
 import Image from "@/component/Common/Image";
 import AppBar from "@/component/Common/Navgation/AppBar";
-import { MarginPosition } from "@/types/Common/Position";
+import { MarginPosition, TooltipPosition } from "@/types/Common/Position";
 // google map
 import GoogleMap from "@/component/Common/Map";
 import useGeoLocation from "@/component/Geocode";
 import Input from "@/component/Common/Input";
 import { InputType } from "@/types/Common/Text";
-import Bottom from "@/component/Common/Navgation/Bottom";
+import BottomBar from "@/component/Common/Navgation/BottomBar";
+import ToolTip from "@/component/Common/ToolTip";
+
 export default function Home() {
   const location = useGeoLocation();
   return (
@@ -47,7 +49,12 @@ export default function Home() {
           buttonSize="md"
           variant="text"
         ></Button>
-        <Bottom title="끄아앙"></Bottom>
+        <BottomBar title="끄아앙"></BottomBar>
+        <div className="text-center">
+          <ToolTip text="끄아앙" position={TooltipPosition.RIGHT}>
+            <span>툴팁 테스트</span>
+          </ToolTip>
+        </div>
       </LayoutArticle>
       {/* <div>
         {location.loaded ? JSON.stringify(location) : "Location data nono"}

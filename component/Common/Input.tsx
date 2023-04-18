@@ -1,6 +1,6 @@
 import { BorderRadius } from "@/types/Common/Border";
 import { useState } from "react";
-import Icon from "@/component/Common/Icon";
+import Icon from "@/component/Common/Icon/Icon";
 import { TiconName } from "@/types/Common/Icon";
 import { OutLine } from "@/types/Common/Border";
 import { InputType } from "@/types/Common/Text";
